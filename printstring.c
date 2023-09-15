@@ -5,13 +5,13 @@
  * @s: A string
  * Return: The number of characters printed
  */
-int printstring(char *c)
+int printstring(char *s)
 {
 int x = 0;
 
-for (x = 0; c[x] != '\0'; x++)
+for (x = 0; s[x] != '\0'; x++)
 {
-_putchar(c[x]);
+_putchar(s[x]);
 }
 
 return(x);
