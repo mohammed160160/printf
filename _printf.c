@@ -18,17 +18,36 @@ va_list list;
 char ch;
 
 va_start(list, format);
-
 while(format != NULL && format[count] != '\0')
 {
-if (format[count] != '\0')
-ch = format[count];
-write(1, &ch, 1);
-count++;
-T++;
+if (format[count] == '%')
+{
+count++
+switch(format[count])
+{
+	case('c'):
+	T += _putchar(va_arg(list, int));
+	count++;
+	break;
+	case('i'):
+	T += printint(va_arg(list, int));
+	count++;
+	break;
+	case('d'):
+	T += printunsignedint(va_arg(list, unsigned int));
+	count++;
+	break;
+	case('s'):
+	T += printstring(va_arg(list, char *));
+	count++;
+	break;
+	}
+		else
+		{
+		T += _putchar(format[count])
+		count++;
+		}
 }
-
 va_end(list);
-
 return (T);
 }
