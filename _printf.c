@@ -15,26 +15,17 @@ int _printf(const char *format, ...)
 {
 int count = 0, T = 0;
 va_list list;
-char ch;
 
 va_start(list, format);
 while(format != NULL && format[count] != '\0')
 {
 if (format[count] == '%')
 {
-count++
-switch(format[count])
-{
+	count++;
+	switch(format[count])
+	{
 	case('c'):
 	T += _putchar(va_arg(list, int));
-	count++;
-	break;
-	case('i'):
-	T += printint(va_arg(list, int));
-	count++;
-	break;
-	case('d'):
-	T += printunsignedint(va_arg(list, unsigned int));
 	count++;
 	break;
 	case('s'):
@@ -42,9 +33,10 @@ switch(format[count])
 	count++;
 	break;
 	}
+}
 		else
 		{
-		T += _putchar(format[count])
+		T += _putchar(format[count]);
 		count++;
 		}
 }
