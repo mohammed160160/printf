@@ -13,17 +13,22 @@
 
 int _printf(const char *format, ...)
 {
-int count = 0;
-int T = 0;
+int count = 0, T = 0;
+va_list list;
 char ch;
+
+va_start(list, format);
 
 while(format != NULL && format[count] != '\0')
 {
+if (format[count] != '\0')
 ch = format[count];
 write(1, &ch, 1);
 count++;
 T++;
 }
+
+va_end(list);
 
 return (T);
 }
