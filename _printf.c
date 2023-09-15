@@ -19,22 +19,10 @@ char ch;
 
 while(format != NULL && format[count] != '\0')
 {
-
-	if (format[count] == '/' && format[count + 1] != '\0')
-	{
-	slash(format[count + 1]);
-	count += 2;
-	T++;
-	}
-
-	else
-	{
-	ch = format[count];
-	write(1, &ch, 1);
-	count++;
-	T++;
-	}
-
+ch = format[count];
+write(1, &ch, 1);
+count++;
+T++;
 }
 
 return (T);
