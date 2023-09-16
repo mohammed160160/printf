@@ -13,6 +13,7 @@
 
 int _printf(const char *format, ...)
 {
+
 int count = 0, T = 0;
 va_list list;
 
@@ -41,3 +42,4 @@ if (format[count] == '%')
 va_end(list);
 return (T);
 }
+
