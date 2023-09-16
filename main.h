@@ -5,6 +5,6 @@ int _printf(const char *format, ...);
 int printstring(char *s);
 int _putchar(char c);
 int printint(int i);
-int printunsignedint(unsigned int ui);
+int printdecimal(int d);
 
 #endif
