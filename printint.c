@@ -18,7 +18,7 @@ return(1);
 
 if (i < 0)
 {
-_putchar('-')
+_putchar('-');
 number = -i;
 count++;
 }
@@ -33,14 +33,14 @@ copy = copy/10;
 digitnum++;
 count++;
 }
-for (tenmult = 1;tenmult < digitnum;w++)
+for (tenmult = 1;tenmult < digitnum;tenmult++)
 {
 tens *= 10;
 }
 	while (tens != 0)
 	{
 	_putchar(number / tens + '0');
-	number = number % x;
+	number = number % tens;
 	tens = tens / 10;
 	}
 return (count);
