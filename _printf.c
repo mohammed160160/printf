@@ -31,7 +31,7 @@ if (format[count] == '%')
 	else if (format[count] == 'i') /*In case of %i*/
 	{ T += printint(va_arg(list, int)); }
 	else if (format[count] == 'd') /*In case of %d*/
-	{ T += printdecimal(va_arg(list, unsigned int)); }
+	{ T += printdecimal(va_arg(list, int)); }
 	count++;
 }
 	else
