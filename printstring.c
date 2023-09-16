@@ -14,5 +14,5 @@ for (x = 0; s[x] != '\0'; x++)
 _putchar(s[x]);
 }
 
-return(x);
+return (x);
 }

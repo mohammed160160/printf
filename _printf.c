@@ -17,28 +17,26 @@ int count = 0, T = 0;
 va_list list;
 
 va_start(list, format);
-while(format != NULL && format[count] != '\0')
+while (format != NULL && format[count] != '\0')
 {
 if (format[count] == '%')
 {
 	count++;
-	switch(format[count])
-	{
-	case('c'):
-	T += _putchar(va_arg(list, int));
+	if (format[count] == 'c') /*In case of %c*/
+	{ T += _putchar(va_arg(list, int)); }
+	else if (format[count] == 's') /*In case of %s*/
+	{ T += printstring(va_arg(list, char *)); }
+	else if (format[count] == '%')  /*In case of %%*/
+	{ T += _putchar('%'); }
+	else if (format[count] == 'i') /*In case of %i*/
+	{ T += printint(va_arg(list, int)); }
+	else if (format[count] == 'd') /*In case of %d*/
+	{ T += printunsignedint(va_arg(list, unsigned int)); }
 	count++;
-	break;
-	case('s'):
-	T += printstring(va_arg(list, char *));
-	count++;
-	break;
-	}
 }
-		else
-		{
-		T += _putchar(format[count]);
-		count++;
-		}
+	else
+	{ T += _putchar(format[count]);
+	count++; }
 }
 va_end(list);
 return (T);
