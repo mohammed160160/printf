@@ -13,44 +13,33 @@
 
 int _printf(const char *format, ...)
 {
-	int count = 0;
-	va_list args;
 
-	va_start(args, format);
-	while (*format)
-	{
-		if (*format == '%')
-		{
-			format++;
-			if (*format == 'c')
-			{
-				putchar(va_arg(args, int));
-				count++;
-			}
-			else if (*format == 's')
-			{
-				char *s = va_arg(args, char *);
+int count = 0, T = 0;
+va_list list;
 
-				for (; *s; s++)
-				{
-					putchar(*s);
-					count++;
-				}
-			}
-			else if (*format == '%')
-			{
-				putchar('%');
-				count++;
-			}
-		}
-		else
-		{
-			putchar(*format);
-			count++;
-		}
-		format++;
-	}
-	va_end(args);
-	return (count);
+va_start(list, format);
+while (format != NULL && format[count] != '\0')
+{
+if (format[count] == '%')
+{
+	count++;
+	if (format[count] == 'c') /*In case of %c*/
+	{ T += _putchar(va_arg(list, int)); }
+	else if (format[count] == 's') /*In case of %s*/
+	{ T += printstring(va_arg(list, char *)); }
+	else if (format[count] == '%')  /*In case of %%*/
+	{ T += _putchar('%'); }
+	else if (format[count] == 'i') /*In case of %i*/
+	{ T += printint(va_arg(list, int)); }
+	else if (format[count] == 'd') /*In case of %d*/
+	{ T += printdecimal(va_arg(list, int)); }
+	count++;
+}
+	else
+	{ T += _putchar(format[count]);
+	count++; }
+}
+va_end(list);
+return (T);
 }
 
