@@ -16,11 +16,10 @@ int _printf(const char *format, ...)
 
 int count = 0, T = 0;
 va_list list;
-while (format == NULL)
-{ return (-1); }
+
 va_start(list, format);
 
-while (format[count] != '\0')
+while (format != NULL && format[count] != '\0')
 {
 if (format[count] == '%')
 {
