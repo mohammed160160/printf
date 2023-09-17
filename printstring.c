@@ -11,7 +11,7 @@ int x = 0;
 
 if (s == NULL)
 {
-write(1, "(null)", 7);
+write(1, "(null)", 6);
 return (6);
 }
 
