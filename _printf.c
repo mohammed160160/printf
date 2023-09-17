@@ -37,15 +37,14 @@ count++;
 	{ T += printint(va_arg(list, int)); }
 	else if (format[count] == 'd') /*In case of %d*/
 	{ T += printdecimal(va_arg(list, int)); }
-	else if (format[count] == '\0') /*In case of %d*/
+	else if (format[count] == '\0') /*In case of %'\0'*/
 	{ return (-1); }
-	else
-	{ _putchar(format[count - 1]);
-	_putchar(format[count]);
-	T += 2; }
+	else /*In case of % followed by non specifiers*/
+	{ T += _putchar(format[count - 1]);
+	T += _putchar(format[count]); }
 	count++;
 }
-	else
+	else /*In case of non specifiers*/
 	{ T += _putchar(format[count]);
 	count++; }
 }
