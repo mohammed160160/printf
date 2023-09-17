@@ -37,8 +37,8 @@ count++;
 	{ T += printint(va_arg(list, int)); }
 	else if (format[count] == 'd') /*In case of %d*/
 	{ T += printdecimal(va_arg(list, int)); }
-        else if (format[count] == '\0') /*In case of %d*/
-        { return (-1); }
+	else if (format[count] == '\0') /*In case of %d*/
+	{ return (-1); }
 	else
 	{ _putchar(format[count - 1]);
 	_putchar(format[count]);
