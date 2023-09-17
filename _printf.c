@@ -17,13 +17,16 @@ int _printf(const char *format, ...)
 int count = 0, T = 0;
 va_list list;
 
+if (format == NULL)
+{ return (-1); }
+
 va_start(list, format);
 
-while (format != NULL && format[count] != '\0')
+while (format[count] != '\0')
 {
 if (format[count] == '%')
 {
-	count++;
+count++;
 	if (format[count] == 'c') /*In case of %c*/
 	{ T += _putchar(va_arg(list, int)); }
 	else if (format[count] == 's') /*In case of %s*/
@@ -34,6 +37,10 @@ if (format[count] == '%')
 	{ T += printint(va_arg(list, int)); }
 	else if (format[count] == 'd') /*In case of %d*/
 	{ T += printdecimal(va_arg(list, int)); }
+	else 
+	{ _putchar(format[count - 1]);
+	_putchar(format[count]);
+	T += 2; }
 	count++;
 }
 	else
