@@ -25,7 +25,7 @@ else if (special == 'i' || special == 'd') /*In case of %i or %d*/
 return (printint(va_arg(list, int)));
 }
 
-else if (special == 's') /*In case of %s*/
+else if (special == 's' || special == 'S') /*In case of %s*/
 {
 return (stringselector(special)(va_arg(list, char *)));
 }

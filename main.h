@@ -7,7 +7,7 @@ int _printf(const char *format, ...);
 
 int (*stringselector(char cs))(char *);
 int printstring(char *s);
-
+int printprintable(char *p);
 
 /*To deal with %d %i and %c*/
 int _putchar(char c);

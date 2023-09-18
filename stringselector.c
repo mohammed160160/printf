@@ -13,5 +13,10 @@ if (cs == 's')
 return (printstring);
 }
 
+if (cs == 'S')
+{
+return (printprintable);
+}
+
 return (0);
 }
