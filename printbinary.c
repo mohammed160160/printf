@@ -7,8 +7,8 @@
  */
 int printbinary(unsigned int b)
 {
-int count = 0, digitnum = 0, tens = 1, tenmult = 1;
-unsigned int copy = 0, number = 0;
+int count = 0, digitnum = 0, multi = 1;
+unsigned int copy = 0, max = 1;
 
 if (b == 0)
 {
@@ -16,25 +16,26 @@ _putchar(0 + '0');
 return (1);
 }
 
-number = b;
+copy = b;
 
-copy = number;
-
-while (copy > 0)
+while (b > 0)
 {
-copy = copy / 10;
+b = b / 2;
 digitnum++;
 count++;
 }
-for (tenmult = 1; tenmult < digitnum; tenmult++)
+
+for (multi = 1; multi < digitnum; multi++)
 {
-tens *= 10;
+max *= 2;
 }
-	while (tens != 0)
-	{
-	_putchar(number / tens + '0');
-	number = number % tens;
-	tens = tens / 10;
-	}
+
+while (max != 0)
+{
+_putchar(copy / max + '0');
+copy = copy % max;
+max = max / 2;
+}
+
 return (count);
 }
