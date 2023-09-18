@@ -3,6 +3,8 @@
 
 int _printf(const char *format, ...);
 int printstring(char *s);
+
+/*To deal with %d %i and %c*/
 int _putchar(char c);
 int printint(int i);
 
