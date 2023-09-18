@@ -18,6 +18,10 @@ if (cu == 'u')
 return (printunsignedint);
 }
 
-return (0);
+if (cu == 'o')
+{
+return (printocto);
+}
 
+return (0);
 }

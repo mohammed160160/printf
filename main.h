@@ -10,6 +10,7 @@ int printint(int i);
 int (*unsignedselector(char cu))(unsigned int ui);
 int printbinary(unsigned int b);
 int printunsignedint(unsigned int u);
+int printocto(unsigned int o);
 
 
 
