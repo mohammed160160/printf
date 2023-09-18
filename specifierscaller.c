@@ -27,7 +27,7 @@ return (printint(va_arg(list, int)));
 
 else if (special == 's') /*In case of %s*/
 {
-return (printstring(va_arg(list, char *)));
+return (stringselector(special)(va_arg(list, char *)));
 }
 
 else if (special == '%')  /*In case of %%*/

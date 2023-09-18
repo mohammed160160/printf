@@ -4,7 +4,10 @@
 #include <stdarg.h>
 
 int _printf(const char *format, ...);
+
+int (*stringselector(char cs))(char *);
 int printstring(char *s);
+
 
 /*To deal with %d %i and %c*/
 int _putchar(char c);
