@@ -5,10 +5,13 @@
 
 int _printf(const char *format, ...);
 
+
+/*To deal with different formation of strings*/
 int (*stringselector(char cs))(char *);
 int printstring(char *s);
 int printprintable(char *p);
 int printrev(char *r);
+int printrot13(char *R);
 
 /*To deal with %d %i and %c*/
 int _putchar(char c);

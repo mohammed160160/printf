@@ -23,5 +23,10 @@ if (cs == 'r')
 return (printrev);
 }
 
+if (cs == 'R')
+{
+return (printrot13);
+}
+
 return (0);
 }
