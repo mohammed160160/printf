@@ -5,6 +5,15 @@ int _printf(const char *format, ...);
 int printstring(char *s);
 int _putchar(char c);
 int printint(int i);
-int printdecimal(int d);
+
+
+int (*unsignedselector(char cu))(unsigned int ui);
+int printbinary(unsigned int b);
+
+
+
+
+
+
 
 #endif
