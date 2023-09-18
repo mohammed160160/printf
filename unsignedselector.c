@@ -23,5 +23,15 @@ if (cu == 'o')
 return (printocto);
 }
 
+if (cu == 'x')
+{
+return (printhex);
+}
+
+if (cu == 'X')
+{
+return (printHEX);
+}
+
 return (0);
 }
