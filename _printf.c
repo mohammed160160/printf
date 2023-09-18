@@ -43,7 +43,7 @@ count++;
 	count++;
 }
 	else /*In case of non specifiers*/
-	{ T += _putchar(format[count]);
+	{ T += _putchar(format[co]);
 	count++; }
 }
 va_end(list);
