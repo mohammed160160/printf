@@ -1,6 +1,8 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+#include <stdarg.h>
+
 int _printf(const char *format, ...);
 int printstring(char *s);
 
@@ -16,7 +18,7 @@ int printocto(unsigned int o);
 int printhex(unsigned int h);
 int printHEX(unsigned int H);
 
-
+int call(char special, va_list list);
 
 
 

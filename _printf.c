@@ -17,36 +17,35 @@ int _printf(const char *format, ...)
 int co = 0, T = 0;
 va_list list;
 
-if (format == NULL)
-{ return (-1); }
-
-va_start(list, format);
-for (co = 0; format[co] != '\0'; co++)
+if (format == NULL) /*If format is NULL it should return -1*/
 {
-	if (format[co] == '%')
-	{
-	co++;
-
-	if (format[co] == '\0') /*In case of %'\0'*/
-	{ return (-1); }
-else if (format[co] == 'c') /*In case of %c*/
-{ T += _putchar(va_arg(list, int)); }
-	else if (format[co] == 'i' || format[co] == 'd') /*In case of %i or %d*/
-	{ T += printint(va_arg(list, int)); }
-else if (format[co] == 's') /*In case of %s*/
-{ T += printstring(va_arg(list, char *)); }
-	else if (format[co] == '%')  /*In case of %%*/
-	{ T += _putchar('%'); }
-else if (format[co] == 'b' || format[co] == 'u' || format[co] == 'o' ||
-format[co] == 'x' || format[co] == 'X')
-{ T += unsignedselector(format[co])(va_arg(list, unsigned int)); }
-	else /*In case of % followed by non specifiers*/
-	{ T += _putchar(format[co - 1]);
-	T += _putchar(format[co]); }
+return (-1);
 }
 
+va_start(list, format); /*starts the va pointer from 0*/
+
+for (co = 0; format[co] != '\0'; co++) /*a loop to print out*/
+{
+
+	if (format[co] == '%') /**If the current value is %**/
+	{
+	co++;
+		if (format[co] == '\0') /*In case of %'\0'*/
+		{
+		return (-1);
+		}
+
+			else
+			{
+			T += call(format[co], list);
+			}
+	}
+
 else /*In case of non specifiers*/
-{ T += _putchar(format[co]); }
+{
+T += _putchar(format[co]);
+}
+
 }
 va_end(list);
 return (T);
