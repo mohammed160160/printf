@@ -38,7 +38,7 @@ else if (format[co] == 'i' || format[co] == 'd') /*In case of %i*/
 { T += printint(va_arg(list, int)); }
 else if (format[co] == '\0') /*In case of %'\0'*/
 { return (-1); }
-else if (format[co] == 'b')
+else if (format[co] == 'b' || format[co] == 'u')
 { T += unsignedselector(format[co])(va_arg(list, unsigned int)); }
 else /*In case of % followed by non specifiers*/
 { T += _putchar(format[co - 1]);

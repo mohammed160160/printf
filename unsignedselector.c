@@ -13,6 +13,11 @@ if (cu == 'b')
 return (printbinary);
 }
 
+if (cu == 'u')
+{
+return (printunsignedint);
+}
+
 return (0);
 
 }
