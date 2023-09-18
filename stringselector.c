@@ -18,5 +18,10 @@ if (cs == 'S')
 return (printprintable);
 }
 
+if (cs == 'r')
+{
+return (printrev);
+}
+
 return (0);
 }

@@ -20,19 +20,19 @@ if (special == 'c') /*In case of %c*/
 return (_putchar(va_arg(list, int)));
 }
 
+else if (special == '%')  /*In case of %%*/
+{
+return (_putchar('%'));
+}
+
 else if (special == 'i' || special == 'd') /*In case of %i or %d*/
 {
 return (printint(va_arg(list, int)));
 }
 
-else if (special == 's' || special == 'S') /*In case of %s*/
+else if (special == 's' || special == 'S' || special == 'r') /*In case of %s*/
 {
 return (stringselector(special)(va_arg(list, char *)));
-}
-
-else if (special == '%')  /*In case of %%*/
-{
-return (_putchar('%'));
 }
 
 else if (special == 'b' || special == 'u' || special == 'o' ||
