@@ -22,7 +22,7 @@ if (format == NULL)
 
 va_start(list, format);
 
-for (co = 0; format[co] != '\0';co++)
+for (co = 0; format[co] != '\0'; co++)
 {
 if (format[co] == '%')
 {
