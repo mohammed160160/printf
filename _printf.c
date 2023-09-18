@@ -14,7 +14,7 @@
 int _printf(const char *format, ...)
 {
 
-int count = 0, T = 0;
+int co = 0, T = 0;
 va_list list;
 
 if (format == NULL)
@@ -22,26 +22,24 @@ if (format == NULL)
 
 va_start(list, format);
 
-while (format[count] != '\0')
+while (format[co] != '\0')
 {
-if (format[count] == '%')
+if (format[co] == '%')
 {
 count++;
-	if (format[count] == 'c') /*In case of %c*/
+	if (format[co] == 'c') /*In case of %c*/
 	{ T += _putchar(va_arg(list, int)); }
-	else if (format[count] == 's') /*In case of %s*/
+	else if (format[co] == 's') /*In case of %s*/
 	{ T += printstring(va_arg(list, char *)); }
-	else if (format[count] == '%')  /*In case of %%*/
+	else if (format[co] == '%')  /*In case of %%*/
 	{ T += _putchar('%'); }
-	else if (format[count] == 'i') /*In case of %i*/
+	else if (format[co] == 'i' || format[count] == 'd') /*In case of %i*/
 	{ T += printint(va_arg(list, int)); }
-	else if (format[count] == 'd') /*In case of %d*/
-	{ T += printdecimal(va_arg(list, int)); }
-	else if (format[count] == '\0') /*In case of %'\0'*/
+	else if (format[co] == '\0') /*In case of %'\0'*/
 	{ return (-1); }
 	else /*In case of % followed by non specifiers*/
-	{ T += _putchar(format[count - 1]);
-	T += _putchar(format[count]); }
+	{ T += _putchar(format[co - 1]);
+	T += _putchar(format[co]); }
 	count++;
 }
 	else /*In case of non specifiers*/
